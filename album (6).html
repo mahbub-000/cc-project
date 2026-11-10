@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Album | Crimson Cup Bangladesh</title>
+
+  <!-- Fonts from Google Fonts (needs internet) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- All the design is in this file -->
+  <link rel="stylesheet" href="album.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP: title and filter buttons
+       ============================================================ -->
+  <header class="album-top">
+    <h1>Our album</h1>
+    <p>Fun behind the bar, our opening ceremony and the days we are proud of.</p>
+
+    <!-- Click a button to show only that kind of photo or video -->
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="making">Making coffee</button>
+      <button class="filter" data-filter="about">About us</button>
+      <button class="filter" data-filter="opening">Opening ceremony</button>
+      <button class="filter" data-filter="best">Best store of the year</button>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       THE BRICK WALL
+       HOW TO CHANGE A BLOCK:
+       - Photo: put your picture in the images folder with the same file name (album-01.jpg, album-02.jpg ...)
+       - Video: put your video in the videos folder with the same file name (album-01.mp4 ...)
+       - Size: the word "big", "wide" or "tall" after "block" sets the size. No word means a small block.
+       - Words: change the text inside the caption.
+       ============================================================ -->
+  <main class="wall">
+
+    <!-- Block 1: video (big size) -->
+    <div class="block video-block big c1" data-category="opening">
+      <video controls preload="metadata"><source src="videos/album-01.mp4" type="video/mp4" onerror="this.parentElement.remove()"></video>
+      <span class="play-icon">▶</span>
+      <div class="caption">
+        <span class="tag">Opening ceremony</span>
+        <strong>Opening day at Crimson Cup</strong>
+      </div>
+    </div>
+
+    <!-- Block 2: photo (normal size) -->
+    <div class="block c3" data-category="making">
+      <img src="images/album-02.jpg" alt="Pouring the first cup" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Making coffee</span>
+        <strong>Pouring the first cup</strong>
+      </div>
+    </div>
+
+    <!-- Block 3: photo (tall size) -->
+    <div class="block tall c2" data-category="making">
+      <img src="images/album-03.jpg" alt="Latte art in the making" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Making coffee</span>
+        <strong>Latte art in the making</strong>
+      </div>
+    </div>
+
+    <!-- Block 4: photo (wide size) -->
+    <div class="block wide c4" data-category="about">
+      <img src="images/album-04.jpg" alt="The founders" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">About us</span>
+        <strong>The founders</strong>
+      </div>
+    </div>
+
+    <!-- Block 5: photo (normal size) -->
+    <div class="block c2" data-category="about">
+      <img src="images/album-05.jpg" alt="Our team" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">About us</span>
+        <strong>Our team</strong>
+      </div>
+    </div>
+
+    <!-- Block 6: video (wide size) -->
+    <div class="block video-block wide c1" data-category="making">
+      <video controls preload="metadata"><source src="videos/album-06.mp4" type="video/mp4" onerror="this.parentElement.remove()"></video>
+      <span class="play-icon">▶</span>
+      <div class="caption">
+        <span class="tag">Making coffee</span>
+        <strong>Behind the bar</strong>
+      </div>
+    </div>
+
+    <!-- Block 7: photo (tall size) -->
+    <div class="block tall c4" data-category="best">
+      <img src="images/album-07.jpg" alt="Best Store of the Year" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Best store of the year</span>
+        <strong>Best Store of the Year</strong>
+      </div>
+    </div>
+
+    <!-- Block 8: photo (normal size) -->
+    <div class="block c3" data-category="best">
+      <img src="images/album-08.jpg" alt="Award night" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Best store of the year</span>
+        <strong>Award night</strong>
+      </div>
+    </div>
+
+    <!-- Block 9: photo (big size) -->
+    <div class="block big c2" data-category="opening">
+      <img src="images/album-09.jpg" alt="Cutting the ribbon" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Opening ceremony</span>
+        <strong>Cutting the ribbon</strong>
+      </div>
+    </div>
+
+    <!-- Block 10: video (normal size) -->
+    <div class="block video-block c4" data-category="making">
+      <video controls preload="metadata"><source src="videos/album-10.mp4" type="video/mp4" onerror="this.parentElement.remove()"></video>
+      <span class="play-icon">▶</span>
+      <div class="caption">
+        <span class="tag">Making coffee</span>
+        <strong>Fun at the coffee bar</strong>
+      </div>
+    </div>
+
+    <!-- Block 11: photo (wide) -->
+    <div class="block wide c1" data-category="opening">
+      <img src="images/album-11.jpg" alt="Our first guests" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Opening ceremony</span>
+        <strong>Our first guests</strong>
+      </div>
+    </div>
+
+    <!-- Block 12: photo (wide size) -->
+    <div class="block wide c3" data-category="opening">
+      <img src="images/album-12.jpg" alt="The first day crowd" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Opening ceremony</span>
+        <strong>The first day crowd</strong>
+      </div>
+    </div>
+
+    <!-- Block 13: photo (wide) -->
+    <div class="block wide c2" data-category="making">
+      <img src="images/album-13.jpg" alt="Roasting the beans" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Making coffee</span>
+        <strong>Roasting the beans</strong>
+      </div>
+    </div>
+
+    <!-- Block 14: video (tall size) -->
+    <div class="block video-block tall c1" data-category="about">
+      <video controls preload="metadata"><source src="videos/album-14.mp4" type="video/mp4" onerror="this.parentElement.remove()"></video>
+      <span class="play-icon">▶</span>
+      <div class="caption">
+        <span class="tag">About us</span>
+        <strong>Our story in motion</strong>
+      </div>
+    </div>
+
+    <!-- Block 15: photo (tall) -->
+    <div class="block tall c3" data-category="best">
+      <img src="images/album-15.jpg" alt="The trophy" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Best store of the year</span>
+        <strong>The trophy</strong>
+      </div>
+    </div>
+
+    <!-- Block 16: photo (wide size) -->
+    <div class="block wide c4" data-category="best">
+      <img src="images/album-16.jpg" alt="Team celebration" onerror="this.remove()">
+      <div class="caption">
+        <span class="tag">Best store of the year</span>
+        <strong>Team celebration</strong>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="album-footer">
+    <p><a href="home.html">Back to home</a> &nbsp;|&nbsp; <a href="index.html">Read our story</a></p>
+  </footer>
+
+
+  <!-- ============================================================
+       SMALL SCRIPT: makes the filter buttons work
+       ============================================================ -->
+  <script>
+    // Hide the round play icon while a video is playing
+    document.querySelectorAll('video').forEach(function (video) {
+      video.onplay = function () { video.parentElement.classList.add('playing'); };
+      video.onpause = function () { video.parentElement.classList.remove('playing'); };
+    });
+
+    var buttons = document.querySelectorAll('.filter');
+    var blocks = document.querySelectorAll('.block');
+
+    buttons.forEach(function (button) {
+      button.onclick = function () {
+        // Mark the clicked button as the active one
+        buttons.forEach(function (b) { b.classList.remove('active'); });
+        button.classList.add('active');
+
+        // Show or hide each block
+        var chosen = button.getAttribute('data-filter');
+        blocks.forEach(function (block) {
+          var category = block.getAttribute('data-category');
+          if (chosen === 'all' || chosen === category) {
+            block.classList.remove('hidden');
+          } else {
+            block.classList.add('hidden');
+          }
+        });
+      };
+    });
+  </script>
+
+</body>
+</html>

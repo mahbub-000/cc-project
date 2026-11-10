@@ -1,0 +1,227 @@
+/* ==============================================================
+   COLORS USED ON THIS PAGE
+   Crimson red ..... #8E1B2E
+   Dark brown ...... #2B1815
+   Light cream ..... #F3EADF
+   Gold ............ #C9973F
+   ============================================================== */
+
+
+/* ---------- BASIC SETTINGS FOR THE WHOLE PAGE ---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #F3EADF;
+  background-color: #2B1815;
+}
+
+a {
+  color: #C9973F;
+  text-decoration: none;
+}
+
+h1, strong, .filter, .tag {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif;
+}
+
+
+/* ---------- TOP: TITLE AND FILTER BUTTONS ---------- */
+
+.album-top {
+  padding: 70px 120px 40px 120px;
+}
+
+.album-top h1 {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.album-top p {
+  max-width: 520px;
+  margin-top: 16px;
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+/* Row of round buttons */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter {
+  padding: 10px 22px;
+  border: 2px solid #C9973F;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #F3EADF;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter:hover {
+  background-color: rgba(201, 151, 63, 0.25);
+}
+
+/* The button that is chosen right now */
+.filter.active {
+  background-color: #C9973F;
+  color: #2B1815;
+}
+
+
+/* ==============================================================
+   THE BRICK WALL
+   ============================================================== */
+
+/* The wall has 4 columns. Every row is 220px tall.
+   "dense" tells the browser to fill every empty gap with a block,
+   so the wall looks full like real bricks. */
+.wall {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  grid-auto-flow: dense;
+  gap: 10px;
+  padding: 20px 120px 80px 120px;
+}
+
+/* One brick */
+.block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Sizes: how many columns and rows a block covers */
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* A block is hidden when it does not match the chosen filter */
+.hidden {
+  display: none;
+}
+
+/* Colors that show until your real photo is added (like different bricks) */
+.c1 {
+  background: linear-gradient(135deg, #a3283a, #6e1220);
+}
+
+.c2 {
+  background: linear-gradient(135deg, #8c6a52, #4d3329);
+}
+
+.c3 {
+  background: linear-gradient(135deg, #b5722f, #7a4519);
+}
+
+.c4 {
+  background: linear-gradient(135deg, #7d1f2c, #3b1018);
+}
+
+/* Photo or video fills the whole brick */
+.block img,
+.block video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+/* Photo grows a little when the mouse is over it */
+.block:hover img {
+  transform: scale(1.06);
+}
+
+/* The round play button on video blocks */
+.play-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(243, 234, 223, 0.9);
+  color: #8E1B2E;
+  font-size: 18px;
+  pointer-events: none;      /* lets the click go through to the video */
+}
+
+/* Text on the bottom of each brick, on a dark fade so it is easy to read */
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 18px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: linear-gradient(to top, rgba(20, 8, 6, 0.85), rgba(20, 8, 6, 0));
+  pointer-events: none;
+}
+
+.caption strong {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* Small tag like "Opening ceremony" */
+.tag {
+  align-self: flex-start;
+  padding: 2px 12px;
+  border-radius: 30px;
+  background-color: #8E1B2E;
+  color: #F3EADF;
+  font-size: 13px;
+}
+
+
+/* On video blocks the text goes to the TOP, so it does not cover the video controls at the bottom */
+.video-block .caption {
+  top: 0;
+  bottom: auto;
+  padding: 16px 80px 40px 18px;
+  background: linear-gradient(to bottom, rgba(20, 8, 6, 0.85), rgba(20, 8, 6, 0));
+}
+
+/* Hide the round play icon while the video is playing */
+.playing .play-icon {
+  display: none;
+}
+
+
+/* ---------- BOTTOM ---------- */
+
+.album-footer {
+  padding: 40px 120px;
+  text-align: center;
+  border-top: 2px solid #8E1B2E;
+}
